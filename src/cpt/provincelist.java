@@ -6,7 +6,7 @@ public class provincelist {
     private static ArrayList<province> provinceslist = new ArrayList<province>();
 
     public provincelist(String fileread) throws IOException{
-        BufferedReader provinces = new BufferedReader(new FileReader("src/cpt"+ fileread));
+        BufferedReader provinces = new BufferedReader(new FileReader("src/cpt/"+ fileread));
         String csvreader ="";
         String[] reader;
 
@@ -18,6 +18,8 @@ public class provincelist {
                 provinceslist.add(new province(reader));
             }
         }
+        provinces.close();
     }
+
 }
 
