@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: grey;">
+         <children>
+            <Label layoutX="22.0" layoutY="26.0" text="Total No Of Cases" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalNoOfCasesLb" layoutX="22.0" layoutY="127.0" text="1234567" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="73.0" text="WorldWide   2020" textFill="WHITE">
+               <font>
+                  <Font name="Courier New Bold Italic" size="26.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" fill="WHITE" layoutX="316.0" layoutY="115.0" startX="-301.0" stroke="WHITE" strokeWidth="2.0" />
+            <HBox layoutX="807.0" layoutY="33.0">
+               <children>
+                  <ComboBox fx:id="country1CB" onAction="#country1CBAction" prefHeight="32.0" prefWidth="150.0" promptText="Select Country" style="-fx-background-color: lightgrey;" />
+                  <Separator opacity="0.0" prefHeight="32.0" prefWidth="11.0" />
+                  <ComboBox fx:id="country2CB" onAction="#country2CBAction" prefHeight="32.0" prefWidth="150.0" promptText="Select Country" style="-fx-background-color: lightgrey;" />
+                  <Separator layoutX="160.0" layoutY="10.0" opacity="0.0" prefHeight="32.0" prefWidth="11.0" />
+                  <Button fx:id="compareBtn" mnemonicParsing="false" onAction="#compareBtnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: lightgrey;" text="Compare">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Circle fill="RED" layoutX="1266.0" layoutY="14.0" onMouseClicked="#exitCircleClicked" radius="11.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+         </children>
+      </Pane>
+      <Pane layoutY="200.0" prefHeight="520.0" prefWidth="1280.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <ScrollPane layoutX="26.0" layoutY="93.0">
+               <content>
+                  <TableView fx:id="covidTable" prefHeight="411.0" prefWidth="1226.0">
+                    <columns>
+                      <TableColumn fx:id="countryCol" prefWidth="213.0" text="Country/Province" />
+                      <TableColumn fx:id="janCol" minWidth="0.0" prefWidth="84.0" text="January" />
+                        <TableColumn fx:id="febCol" minWidth="0.0" prefWidth="84.0" text="February" />
+                        <TableColumn fx:id="marCol" minWidth="0.0" prefWidth="84.0" text="March" />
+                        <TableColumn fx:id="aprCol" minWidth="0.0" prefWidth="84.0" text="April" />
+                        <TableColumn fx:id="mayCol" minWidth="0.0" prefWidth="84.0" text="May" />
+                        <TableColumn fx:id="junCol" minWidth="0.0" prefWidth="84.0" text="June" />
+                        <TableColumn fx:id="julCol" minWidth="0.0" prefWidth="84.0" text="July" />
+                        <TableColumn fx:id="augCol" minWidth="0.0" prefWidth="84.0" text="August" />
+                        <TableColumn fx:id="sepCol" minWidth="0.0" prefWidth="84.0" text="September" />
+                        <TableColumn fx:id="octCol" minWidth="0.0" prefWidth="84.0" text="October" />
+                        <TableColumn fx:id="novCol" minWidth="0.0" prefWidth="84.0" text="November" />
+                        <TableColumn fx:id="decCol" minWidth="0.0" prefWidth="84.0" text="December" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <Label fx:id="totalNoOfCasesLb1" layoutX="26.0" layoutY="15.0" text="COVID-19 Statistics of 2020">
+               <font>
+                  <Font name="Arial Black" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchCountryTF" alignment="CENTER" layoutX="465.0" layoutY="20.0" prefHeight="30.0" prefWidth="350.0" promptText="Search Country">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
