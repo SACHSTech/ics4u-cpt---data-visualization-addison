@@ -80,15 +80,59 @@ public class CountryStatsController implements Initializable {
 
         countryCB.getSelectionModel().select(getCountryStatsName());
     }    
-
+    /*
+    *
+    *@author for menu Engelbert.Aroozoo
+    */
     @FXML
     private void backBtnAction(ActionEvent event) {
-        //e
+    	newWindow("MainWindow");
+    	((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML
     private void countryCBAction(ActionEvent event) {
-        //e
+    	setCountryStatsName(countryCB.getSelectionModel().getSelectedItem().toString());
+    	try {
+    		if(graphFilter.getSelectionModel().getSelectedItem().toString().equals("BarGraph")) {
+        		barChartPane.setVisible(true);
+        		lineChartPane.setVisible(false);
+        		scatterChart.setVisible(false);
+        		drawChart("Bar");
+        	}else if(graphFilter.getSelectionModel().getSelectedItem().toString().equals("LineGraph")) {
+        		barChartPane.setVisible(false);
+        		scatterChart.setVisible(false);
+        		lineChartPane.setVisible(true);
+        		drawChart("Line");
+        	}else {
+        		barChartPane.setVisible(false);
+        		scatterChart.setVisible(true);
+        		lineChartPane.setVisible(false);
+        		drawChart("Scatter");
+        	}
+		} catch (FileNotFoundException e) {AlertBox(e.toString());}
+    	
+    }
+    @FXML
+    void grapFilterAction(ActionEvent event)  {
+    	try {
+    		if(graphFilter.getSelectionModel().getSelectedItem().toString().equals("BarGraph")) {
+        		barChartPane.setVisible(true);
+        		lineChartPane.setVisible(false);
+        		scatterChart.setVisible(false);
+        		drawChart("Bar");
+        	}else if(graphFilter.getSelectionModel().getSelectedItem().toString().equals("LineGraph")) {
+        		barChartPane.setVisible(false);
+        		scatterChart.setVisible(false);
+        		lineChartPane.setVisible(true);
+        		drawChart("Line");
+        	}else {
+        		barChartPane.setVisible(false);
+        		scatterChart.setVisible(true);
+        		lineChartPane.setVisible(false);
+        		drawChart("Scatter");
+        	}
+		} catch (FileNotFoundException e) {AlertBox(e.toString());}
     }
     
 }
