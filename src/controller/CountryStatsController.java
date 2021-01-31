@@ -22,7 +22,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import jdk.internal.icu.impl.StringPrepDataReader;
 import model.CovidTableModel;
 /*
 *
@@ -223,6 +222,17 @@ public class CountryStatsController implements Initializable {
         Collections.sort(list);
         min=list.get(0);
         max=list.get(list.size()-1);
-        median=
+        median=(list.get(5)+list.get(6))/2;
+
+        int sumSD =0;
+        for (Integer i:list){
+            sumSD+= Math.pow((1-mean), 2);
+            standDev= Math.sqrt(sumSD/(list.size()-1));
+        }
+        meanLB.setText(mean+"");
+        medianLB.setText(median+"");
+        maxLB.setText(max+"");
+        minLB.setText(min+"");
+        stanDevLB.setText(String.format("%.2f",standDev));
     }
 }
