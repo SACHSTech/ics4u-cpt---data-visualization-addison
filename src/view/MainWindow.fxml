@@ -79,7 +79,7 @@
                   </TableView>
                </content>
             </ScrollPane>
-            <Label fx:id="totalNoOfCasesLb1" layoutX="26.0" layoutY="15.0" text="COVID-19 Statistics of 2020">
+            <Label layoutX="26.0" layoutY="15.0" text="COVID-19 Statistics of 2020">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>

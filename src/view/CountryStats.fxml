@@ -2,7 +2,9 @@
 
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -13,51 +15,134 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CountryStatsController">
    <children>
-      <Pane layoutX="15.0" layoutY="14.0" prefHeight="200.0" prefWidth="1251.0" style="-fx-background-color: grey;">
+      <Pane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="22.0" layoutY="26.0" text="Total No Of Cases" textFill="WHITE">
+            <Label layoutX="22.0" layoutY="27.0" text="Total No Of Cases" textFill="WHITE">
                <font>
                   <Font name="Courier New Bold" size="38.0" />
                </font>
             </Label>
-            <Label fx:id="totalNoOfCasesLb" layoutX="22.0" layoutY="127.0" text="1234567" textFill="WHITE">
+            <Label fx:id="totalNoOfCasesLb" layoutX="22.0" layoutY="128.0" text="1234567" textFill="WHITE">
                <font>
                   <Font name="Courier New Bold" size="38.0" />
                </font>
             </Label>
-            <Label fx:id="countryNameLb" layoutX="91.0" layoutY="73.0" text="WorldWide   2020" textFill="WHITE">
+            <Label fx:id="countryNameLb" layoutX="91.0" layoutY="74.0" text="WorldWide   2020" textFill="WHITE">
                <font>
                   <Font name="Courier New Bold Italic" size="26.0" />
                </font>
             </Label>
-            <Line endX="100.0" fill="WHITE" layoutX="316.0" layoutY="115.0" startX="-301.0" stroke="WHITE" strokeWidth="2.0" />
-            <Button fx:id="backBtn" layoutX="1127.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: lightgrey;" text="Back">
+            <Line endX="100.0" fill="WHITE" layoutX="316.0" layoutY="116.0" startX="-301.0" stroke="WHITE" strokeWidth="2.0" />
+            <Button fx:id="backBtn" layoutX="1156.0" layoutY="10.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: lightgrey;" text="Back">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="214.0" prefHeight="492.0" prefWidth="1251.0" style="-fx-background-color: lightgrey;">
+      <Pane layoutY="200.0" prefHeight="521.0" prefWidth="1280.0" style="-fx-background-color: lightgrey;">
          <children>
-            <Label fx:id="totalNoOfCasesLb1" layoutX="14.0" layoutY="15.0" prefHeight="39.0" prefWidth="403.0" text="COVID-19 Statistics of 2020">
+            <Label layoutX="21.0" layoutY="17.0" prefHeight="39.0" prefWidth="403.0" text="COVID-19 Statistics of 2020">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <Pane fx:id="barChartPane" layoutX="102.0" layoutY="78.0">
+            <Pane layoutX="21.0" layoutY="71.0" prefHeight="436.0" prefWidth="1238.0" style="-fx-border-color: grey; -fx-border-width: 2px;">
                <children>
-                  <BarChart fx:id="countryBarChart" prefHeight="400.0" prefWidth="1047.0" title="Month Wise Cases">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </BarChart>
+                  <Pane fx:id="scatterChartPane" layoutX="15.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <ScatterChart fx:id="scatterChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" title="Month Wise Cases">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </ScatterChart>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="lineChartPane" layoutX="15.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <LineChart fx:id="countryLineChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Month Wise  Cases">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="barChartPane" layoutX="14.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
+                     <children>
+                        <BarChart fx:id="countryBarChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Month Wise Cases">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1051.0" layoutY="156.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="90.0" text="Mean : ">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutY="25.0" prefHeight="25.0" prefWidth="90.0" text="Median : " textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutY="50.0" prefHeight="25.0" prefWidth="90.0" text="Max : ">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutY="75.0" prefHeight="25.0" prefWidth="90.0" text="Min : " textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutY="100.0" prefHeight="25.0" prefWidth="90.0" text="Stan. Dev. : " textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="meanLb" layoutX="90.0" prefHeight="25.0" prefWidth="90.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="medianLb" contentDisplay="RIGHT" layoutX="90.0" layoutY="25.0" prefHeight="25.0" prefWidth="90.0" text="0" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="maxLb" layoutX="90.0" layoutY="50.0" prefHeight="25.0" prefWidth="90.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="minLb" contentDisplay="RIGHT" layoutX="90.0" layoutY="75.0" prefHeight="25.0" prefWidth="90.0" text="0" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="stanDevLb" contentDisplay="RIGHT" layoutX="90.0" layoutY="100.0" prefHeight="25.0" prefWidth="90.0" text="0" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
-            <ComboBox fx:id="countryCB" layoutX="501.0" layoutY="19.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#countryCBAction" prefHeight="32.0" prefWidth="250.0" promptText="Select Country" style="-fx-background-color: grey;" />
+            <ComboBox fx:id="countryCB" layoutX="424.0" layoutY="21.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#countryCBAction" prefHeight="32.0" prefWidth="250.0" promptText="Select Country" style="-fx-background-color: grey;" />
+            <ComboBox fx:id="graphFilter" layoutX="901.0" layoutY="21.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#grapFilterAction" prefHeight="32.0" prefWidth="170.0" promptText="Filter" style="-fx-background-color: grey;" />
          </children>
       </Pane>
    </children>

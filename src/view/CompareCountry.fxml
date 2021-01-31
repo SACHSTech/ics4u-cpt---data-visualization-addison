@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -15,50 +16,50 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CompareCountryController">
    <children>
-      <Pane layoutX="15.0" layoutY="14.0" prefHeight="200.0" prefWidth="1251.0" style="-fx-background-color: grey;">
+      <Pane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="466.0" layoutY="14.0" text="Compare Results" textFill="WHITE">
+            <Label layoutX="433.0" layoutY="14.0" text="Compare Results" textFill="WHITE">
                <font>
                   <Font name="Courier New Bold" size="46.0" />
                </font>
             </Label>
-            <HBox layoutX="403.0" layoutY="100.0">
+            <HBox alignment="CENTER" layoutX="60.0" layoutY="100.0" prefHeight="32.0" prefWidth="1161.0">
                <children>
-                  <Label fx:id="country1NameLb" text="WorldWide   2020" textFill="WHITE">
+                  <Label fx:id="country1NameLb" alignment="CENTER" text="WorldWide   2020" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Courier New Bold Italic" size="26.0" />
+                        <Font name="Arial Bold Italic" size="26.0" />
                      </font>
                   </Label>
-                  <Separator opacity="0.0" prefHeight="30.0" prefWidth="8.0" />
-                  <Label fx:id="country2NameLb1" layoutX="270.0" layoutY="10.0" prefHeight="32.0" prefWidth="21.0" text="&amp;" textFill="WHITE">
+                  <Separator opacity="0.0" prefHeight="30.0" prefWidth="25.0" />
+                  <Label fx:id="country2NameLb1" alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="10.0" prefHeight="32.0" prefWidth="21.0" text="vs" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Courier New Bold Italic" size="26.0" />
+                        <Font name="Courier New Bold" size="26.0" />
                      </font>
                   </Label>
-                  <Separator layoutX="260.0" layoutY="10.0" opacity="0.0" prefHeight="30.0" prefWidth="8.0" />
-                  <Label fx:id="country2NameLb" text="WorldWide   2020" textFill="WHITE">
+                  <Separator layoutX="260.0" layoutY="10.0" opacity="0.0" prefHeight="30.0" prefWidth="25.0" />
+                  <Label fx:id="country2NameLb" alignment="CENTER" contentDisplay="CENTER" text="WorldWide   2020" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Courier New Bold Italic" size="26.0" />
+                        <Font name="Arial Bold Italic" size="26.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <Line endX="251.0" fill="WHITE" layoutX="699.0" layoutY="84.0" startX="-301.0" stroke="WHITE" strokeWidth="2.0" />
-            <Button fx:id="backBtn" layoutX="1127.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: lightgrey;" text="Back">
+            <Line endX="251.0" fill="WHITE" layoutX="666.0" layoutY="84.0" startX="-301.0" stroke="WHITE" strokeWidth="2.0" />
+            <Button fx:id="backBtn" layoutX="1156.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="33.0" prefWidth="110.0" style="-fx-background-color: lightgrey;" text="Back">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="207.0" prefHeight="492.0" prefWidth="1251.0" style="-fx-background-color: lightgrey;">
+      <Pane layoutY="200.0" prefHeight="520.0" prefWidth="1280.0" style="-fx-background-color: lightgrey;">
          <children>
-            <Label fx:id="totalNoOfCasesLb1" alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" prefHeight="80.0" prefWidth="285.0" text="COVID-19 Statistics of 2020" textAlignment="CENTER" wrapText="true">
+            <Label alignment="TOP_CENTER" layoutX="53.0" layoutY="14.0" prefHeight="80.0" prefWidth="321.0" text="COVID-19 Statistics of 2020" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Arial Black" size="26.0" />
                </font>
             </Label>
-            <HBox layoutX="410.0" layoutY="18.0">
+            <HBox layoutX="424.0" layoutY="14.0">
                <children>
                   <ComboBox fx:id="country1CB" onAction="#country1CBAction" prefHeight="32.0" prefWidth="150.0" promptText="Select Country" style="-fx-background-color: grey;" />
                   <Separator opacity="0.0" prefHeight="32.0" prefWidth="11.0" />
@@ -71,9 +72,9 @@
                   </Button>
                </children>
             </HBox>
-            <Pane fx:id="lineChartPane" layoutX="71.0" layoutY="91.0">
+            <Pane fx:id="lineChartPane" layoutX="53.0" layoutY="89.0" prefHeight="417.0" prefWidth="1174.0">
                <children>
-                  <LineChart fx:id="lineChart" prefHeight="387.0" prefWidth="1109.0" title="Anual Report">
+                  <LineChart fx:id="lineChart" prefHeight="417.0" prefWidth="1174.0" style="-fx-background-color: lightgrey; -fx-border-color: grey;" title="Anual Report">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -83,6 +84,19 @@
                   </LineChart>
                </children>
             </Pane>
+            <Pane fx:id="barChartPane" layoutX="53.0" layoutY="89.0" prefHeight="417.0" prefWidth="1174.0">
+               <children>
+                  <BarChart fx:id="barChart" prefHeight="417.0" prefWidth="1174.0" title="Anual Report">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+            <ComboBox fx:id="graphFilter" layoutX="1057.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#grapFilterAction" prefHeight="32.0" prefWidth="170.0" promptText="Filter" style="-fx-background-color: grey;" />
          </children>
       </Pane>
    </children>
