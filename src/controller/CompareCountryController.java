@@ -171,6 +171,20 @@ public class CompareCountryController implements Initializable {
             series2.setName(getCompareCountry2());
             if(type.equals("Bar")){
                 barChart.setAnimated(true);
+                lineChart.getData().clear();
+                barChart.getYAxis().setLabel("# Of Active Cases");
+                barChart.getXAxis().setLabel("Month");
+                barChart.getData().clear();
+                barChart.getData().addAll(series1, series2);
+                barChart.setAnimated(false);
+            }else{
+                lineChart.setAnimated(true);
+        	    barChart.getData().clear();
+        	    lineChart.getYAxis().setLabel("# Of Active Cases");
+                lineChart.getXAxis().setLabel("Month");
+                lineChart.getData().clear();
+                lineChart.getData().addAll(series1, series2);
+                lineChart.setAnimated(false);
             }
         }
         
