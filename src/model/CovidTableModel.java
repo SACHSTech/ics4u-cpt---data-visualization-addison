@@ -3,22 +3,25 @@ package model;
 public class CovidTableModel {
 
 	String country;
-	String janCol;
-	String febCol;
-	String marCol;
-	String aprCol;
-	String mayCol;
-	String junCol;
-	String julCol;
-	String augCol;
-	String sepCol;
-	String octCol;
-	String novCol;
-	String decCol;
+	int janCol;
+	int febCol;
+	int marCol;
+	int aprCol;
+	int mayCol;
+	int junCol;
+	int julCol;
+	int augCol;
+	int sepCol;
+	int octCol;
+	int novCol;
+	int decCol;
+	/*
+	*
+	*@author Addison.Chan
+	*/
 	
-	
-	public CovidTableModel(String country, String janCol, String febCol, String marCol, String aprCol, String mayCol,
-			String junCol, String julCol, String augCol, String sepCol, String octCol, String novCol, String decCol) {
+	public CovidTableModel(String country, int janCol, int febCol, int marCol, int aprCol, int mayCol,
+			int junCol, int julCol, int augCol, int sepCol, int octCol, int novCol, int decCol) {
 		super();
 		this.country = country;
 		this.janCol = janCol;
@@ -35,7 +38,9 @@ public class CovidTableModel {
 		this.decCol = decCol;
 	}
 
-
+	/*
+	* Getters and setters for all the countries, and monlths 
+	*/
 	public String getCountry() {
 		return country;
 	}
@@ -46,122 +51,122 @@ public class CovidTableModel {
 	}
 
 
-	public String getJanCol() {
+	public int getJanCol() {
 		return janCol;
 	}
 
 
-	public void setJanCol(String janCol) {
+	public void setJanCol(int janCol) {
 		this.janCol = janCol;
 	}
 
 
-	public String getFebCol() {
+	public int getFebCol() {
 		return febCol;
 	}
 
 
-	public void setFebCol(String febCol) {
+	public void setFebCol(int febCol) {
 		this.febCol = febCol;
 	}
 
 
-	public String getMarCol() {
+	public int getMarCol() {
 		return marCol;
 	}
 
 
-	public void setMarCol(String marCol) {
+	public void setMarCol(int marCol) {
 		this.marCol = marCol;
 	}
 
 
-	public String getAprCol() {
+	public int getAprCol() {
 		return aprCol;
 	}
 
 
-	public void setAprCol(String aprCol) {
+	public void setAprCol(int aprCol) {
 		this.aprCol = aprCol;
 	}
 
 
-	public String getMayCol() {
+	public int getMayCol() {
 		return mayCol;
 	}
 
 
-	public void setMayCol(String mayCol) {
+	public void setMayCol(int mayCol) {
 		this.mayCol = mayCol;
 	}
 
 
-	public String getJunCol() {
+	public int getJunCol() {
 		return junCol;
 	}
 
 
-	public void setJunCol(String junCol) {
+	public void setJunCol(int junCol) {
 		this.junCol = junCol;
 	}
 
 
-	public String getJulCol() {
+	public int getJulCol() {
 		return julCol;
 	}
 
 
-	public void setJulCol(String julCol) {
+	public void setJulCol(int julCol) {
 		this.julCol = julCol;
 	}
 
 
-	public String getAugCol() {
+	public int getAugCol() {
 		return augCol;
 	}
 
 
-	public void setAugCol(String augCol) {
+	public void setAugCol(int augCol) {
 		this.augCol = augCol;
 	}
 
 
-	public String getSepCol() {
+	public int getSepCol() {
 		return sepCol;
 	}
 
 
-	public void setSepCol(String sepCol) {
+	public void setSepCol(int sepCol) {
 		this.sepCol = sepCol;
 	}
 
 
-	public String getOctCol() {
+	public int getOctCol() {
 		return octCol;
 	}
 
 
-	public void setOctCol(String octCol) {
+	public void setOctCol(int octCol) {
 		this.octCol = octCol;
 	}
 
 
-	public String getNovCol() {
+	public int getNovCol() {
 		return novCol;
 	}
 
 
-	public void setNovCol(String novCol) {
+	public void setNovCol(int novCol) {
 		this.novCol = novCol;
 	}
 
 
-	public String getDecCol() {
+	public int getDecCol() {
 		return decCol;
 	}
 
 
-	public void setDecCol(String decCol) {
+	public void setDecCol(int decCol) {
 		this.decCol = decCol;
 	}
 	
