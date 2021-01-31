@@ -1,14 +1,14 @@
-
 package controller;
+
 import java.io.FileNotFoundException;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
@@ -18,7 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import model.CovidTableModel;
 
-public class CompareCountryController implements Initializable {
+
+public class CompareCountryController extends Controller {
 
     @FXML
     private Label country1NameLb;
@@ -28,8 +29,6 @@ public class CompareCountryController implements Initializable {
     private Label country2NameLb;
     @FXML
     private Button backBtn;
-    @FXML
-    private Label totalNoOfCasesLb1;
     @FXML
     private ComboBox<String> country1CB;
     @FXML
@@ -43,13 +42,14 @@ public class CompareCountryController implements Initializable {
     @FXML
     private Pane barChartPane;
     @FXML
-    private BarChart<String,Number> barChart;
+    private BarChart<String, Number> barChart;
     @FXML
     private ComboBox<String> graphFilter;
 
+    ObservableList<String> graphFilterList = FXCollections.observableArrayList("BarGraph","LineGraph");
     /**
-     * Initializes the controller class. 
-     * @author Engelbert.Aroozoo
+     * Initializes the controller class.
+	 * @author Engelbert.Aroozoo
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -129,18 +129,23 @@ public class CompareCountryController implements Initializable {
         	}
 		} catch (FileNotFoundException e) {AlertBox(e.toString());}
     }
+    
+    
     /**
-     * drawing the graphs
-     * @author Addison.Chan
-     */
-    private void drawChart(String type) throws FileNotFoundException{
-        XYChart.Series series1 = new XYChart.Series<>();
-        XYChart.Series series2 = new XYChart.Series<>();
-
-        for CovidTableModel data;getCovidData()){
-            if(data.getCountry().equals(getCompareCountry1())){
-                series1.getData().add(new XYChart.Data("Jan",data.getJanCol()));
-                series1.getData().add(new XYChart.Data("Feb", data.getFebCol()));
+	 * FXML Controller class
+	 *
+	 * @author Addison Chan
+	 */
+    private void drawChart(String type) throws FileNotFoundException {
+    	
+    	XYChart.Series series1 = new XYChart.Series();
+    	XYChart.Series series2 = new XYChart.Series();
+    	
+    	for(CovidTableModel data:getCovidData()) {
+    		//Preparing the data points for the country1
+    		if(data.getCountry().equals(getCompareCountry1())) {
+    			series1.getData().add(new XYChart.Data("Jan", data.getJanCol()));
+    	        series1.getData().add(new XYChart.Data("Feb", data.getFebCol()));
     	        series1.getData().add(new XYChart.Data("March", data.getMarCol()));
     	        series1.getData().add(new XYChart.Data("April", data.getAprCol()));
     	        series1.getData().add(new XYChart.Data("May", data.getMayCol()));
@@ -151,10 +156,11 @@ public class CompareCountryController implements Initializable {
     	        series1.getData().add(new XYChart.Data("Oct", data.getOctCol()));
     	        series1.getData().add(new XYChart.Data("Nov", data.getNovCol()));
     	        series1.getData().add(new XYChart.Data("Dec", data.getDecCol()));
-                }
-            if(data.getCountry().equals(getCompareCountry2())){
-                series2.getData().add(new XYChart.Data("Jan",data.getJanCol()));
-                series2.getData().add(new XYChart.Data("Feb", data.getFebCol()));
+    		}
+    		//Preparing the data points for the country2
+    		if(data.getCountry().equals(getCompareCountry2())) {
+    			series2.getData().add(new XYChart.Data("Jan", data.getJanCol()));
+    	        series2.getData().add(new XYChart.Data("Feb", data.getFebCol()));
     	        series2.getData().add(new XYChart.Data("March", data.getMarCol()));
     	        series2.getData().add(new XYChart.Data("April", data.getAprCol()));
     	        series2.getData().add(new XYChart.Data("May", data.getMayCol()));
@@ -165,28 +171,34 @@ public class CompareCountryController implements Initializable {
     	        series2.getData().add(new XYChart.Data("Oct", data.getOctCol()));
     	        series2.getData().add(new XYChart.Data("Nov", data.getNovCol()));
     	        series2.getData().add(new XYChart.Data("Dec", data.getDecCol()));
-                }
-            }
-            series1.setName(getCompareCountry1());
-            series2.setName(getCompareCountry2());
-            if(type.equals("Bar")){
-                barChart.setAnimated(true);
-                lineChart.getData().clear();
-                barChart.getYAxis().setLabel("# Of Active Cases");
-                barChart.getXAxis().setLabel("Month");
-                barChart.getData().clear();
-                barChart.getData().addAll(series1, series2);
-                barChart.setAnimated(false);
-            }else{
-                lineChart.setAnimated(true);
-        	    barChart.getData().clear();
-        	    lineChart.getYAxis().setLabel("# Of Active Cases");
-                lineChart.getXAxis().setLabel("Month");
-                lineChart.getData().clear();
-                lineChart.getData().addAll(series1, series2);
-                lineChart.setAnimated(false);
-            }
+    		}
+    	}
+        
+    	//Setting the name to the series
+    	series1.setName(getCompareCountry1());
+        series2.setName(getCompareCountry2());
+        //Draw Bar Chart if barGraph is selected 
+    	if(type.equals("Bar")) {
+        	barChart.setAnimated(true);
+        	lineChart.getData().clear();
+        	barChart.getYAxis().setLabel("# Of Active Cases");
+            barChart.getXAxis().setLabel("Month");
+            barChart.getData().clear();
+            barChart.getData().addAll(series1, series2);
+            barChart.setAnimated(false);
+        }//Draw Line Chart if LineGrapht is selected
+    	else {
+        	lineChart.setAnimated(true);
+        	barChart.getData().clear();
+        	lineChart.getYAxis().setLabel("# Of Active Cases");
+            lineChart.getXAxis().setLabel("Month");
+            lineChart.getData().clear();
+            lineChart.getData().addAll(series1, series2);
+            lineChart.setAnimated(false);
         }
         
+        
+        
     }
+    
 }
