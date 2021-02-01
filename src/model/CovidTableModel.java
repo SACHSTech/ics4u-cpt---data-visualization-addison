@@ -46,7 +46,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns country
-	* @author Addison
+	* @author Addison Chan
 	*/
 
 	public String getCountry() {
@@ -63,7 +63,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns january col
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getJanCol() {
 		return janCol;
@@ -79,7 +79,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns feb number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getFebCol() {
 		return febCol;
@@ -95,7 +95,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Mar number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getMarCol() {
 		return marCol;
@@ -111,7 +111,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Apr number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getAprCol() {
 		return aprCol;
@@ -127,7 +127,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns May number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getMayCol() {
 		return mayCol;
@@ -143,7 +143,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Jun number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getJunCol() {
 		return junCol;
@@ -159,7 +159,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Jul number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getJulCol() {
 		return julCol;
@@ -175,7 +175,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Aug number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getAugCol() {
 		return augCol;
@@ -191,7 +191,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Sep number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getSepCol() {
 		return sepCol;
@@ -207,7 +207,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Oct number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getOctCol() {
 		return octCol;
@@ -223,7 +223,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Nov number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getNovCol() {
 		return novCol;
@@ -239,7 +239,7 @@ public class CovidTableModel {
 	*
 	* 
 	* @return returns Dec number
-	* @author Addison
+	* @author Addison Chan
 	*/
 	public int getDecCol() {
 		return decCol;
