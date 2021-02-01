@@ -65,7 +65,7 @@ public class CountryStatsController extends Controller {
 
     /**
      * Initializes the controller class.
-	 * @author Engelbert.Aroozoo
+     * 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,13 +87,21 @@ public class CountryStatsController extends Controller {
     	
     	
     }    
-
+    /**
+     * 
+     * @param event makes the mainwindow
+     *@author Engelbert.Aroozo
+     */
     @FXML
     private void backBtnAction(ActionEvent event) {
     	newWindow("MainWindow");
     	((Node) (event.getSource())).getScene().getWindow().hide();
     }
-
+    /**
+     * 
+     * @param event which ever graph is chosen it puts on.
+     *@author Engelbert.Aroozo
+     */
     @FXML
     private void countryCBAction(ActionEvent event) {
     	setCountryStatsName(countryCB.getSelectionModel().getSelectedItem().toString());
@@ -141,8 +149,9 @@ public class CountryStatsController extends Controller {
     
     /**
      * drawing the graphs
- 	 * @author Addison Chan
-	 */
+     * @String type is which ever chart that was chosen
+     * @author Addison Chan
+     */
     private void drawChart(String type) throws FileNotFoundException {
     	dataList.clear();
     	XYChart.Series series1 = new XYChart.Series();
