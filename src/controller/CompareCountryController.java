@@ -73,23 +73,39 @@ public class CompareCountryController extends Controller {
 			drawChart("Line");
 		} catch (FileNotFoundException e) {AlertBox(e.toString());}
     }    
-
+     /**
+     * 
+     * @param event makes the mainwindow
+     *@author Engelbert.Aroozo
+     */
     @FXML
     private void backBtnAction(ActionEvent event) {
     	newWindow("MainWindow");
     	((Node) (event.getSource())).getScene().getWindow().hide();
     }
-
+    /**
+     * 
+     * @param event picks the 1st country to compare
+     *@author Addison.Chan
+     */
     @FXML
     private void country1CBAction(ActionEvent event) {
     	setCompareCountry1(country1CB.getSelectionModel().getSelectedItem().toString());
     }
-
+    /**
+     * 
+     * @param event picks the second country to compare
+     *@author Addison.Chan
+     */
     @FXML
     private void country2CBAction(ActionEvent event) {
     	setCompareCountry2(country2CB.getSelectionModel().getSelectedItem().toString());
     }
-
+    /**
+     * 
+     * @param event when you choose no country and press compare or it puts both countries into a new window and compares
+     *@author Addison.Chan
+     */
     @FXML
     private void compareBtnAction(ActionEvent event) {
     	if(country1CB.getSelectionModel().isEmpty() || country2CB.getSelectionModel().isEmpty()) {
@@ -133,7 +149,7 @@ public class CompareCountryController extends Controller {
     
     /**
 	 * FXML Controller class
-	 *
+	 * @String type which ever the type of graph is chosen
 	 * @author Addison Chan
 	 */
     private void drawChart(String type) throws FileNotFoundException {
