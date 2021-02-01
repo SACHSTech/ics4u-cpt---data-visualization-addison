@@ -51,7 +51,7 @@
                <children>
                   <Pane fx:id="scatterChartPane" layoutX="15.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
                      <children>
-                        <ScatterChart fx:id="scatterChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" title="Month Wise Cases">
+                        <ScatterChart fx:id="scatterChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" title="Monthly Cases">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -63,7 +63,7 @@
                   </Pane>
                   <Pane fx:id="lineChartPane" layoutX="15.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
                      <children>
-                        <LineChart fx:id="countryLineChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Month Wise  Cases">
+                        <LineChart fx:id="countryLineChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Monthly Cases">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -75,7 +75,7 @@
                   </Pane>
                   <Pane fx:id="barChartPane" layoutX="14.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="425.0" prefWidth="1050.0" style="-fx-background-color: lightgrey;">
                      <children>
-                        <BarChart fx:id="countryBarChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Month Wise Cases">
+                        <BarChart fx:id="countryBarChart" layoutX="15.0" layoutY="3.0" prefHeight="420.0" prefWidth="1020.0" style="-fx-background-color: lightgrey;" title="Monthly Cases">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>

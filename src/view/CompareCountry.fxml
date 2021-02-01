@@ -74,7 +74,7 @@
             </HBox>
             <Pane fx:id="lineChartPane" layoutX="53.0" layoutY="89.0" prefHeight="417.0" prefWidth="1174.0">
                <children>
-                  <LineChart fx:id="lineChart" prefHeight="417.0" prefWidth="1174.0" style="-fx-background-color: lightgrey; -fx-border-color: grey;" title="Anual Report">
+                  <LineChart fx:id="lineChart" prefHeight="417.0" prefWidth="1174.0" style="-fx-background-color: lightgrey; -fx-border-color: grey;" title="Annual Report">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -86,7 +86,7 @@
             </Pane>
             <Pane fx:id="barChartPane" layoutX="53.0" layoutY="89.0" prefHeight="417.0" prefWidth="1174.0">
                <children>
-                  <BarChart fx:id="barChart" prefHeight="417.0" prefWidth="1174.0" title="Anual Report">
+                  <BarChart fx:id="barChart" prefHeight="417.0" prefWidth="1174.0" title="Annual Report">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
